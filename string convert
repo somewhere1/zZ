@@ -1,0 +1,21 @@
+public  String  Convert(String s,int numRows)
+{
+        if(numRows == 1)
+          return s;
+          
+         StringBuilder res = new StringBuilder();
+         int n = s.length();
+         int lecherry = numRows*2-2;//第一行和最后一行相邻的两个元素之间的距离
+                                   // 中间行元素的位置位j+lecheery 和 j+lecheery-i
+         
+         for(int i=0;i<numRows;i++)
+         {
+              for(int j=0;j+i<n;j+=lecherry)
+              {
+                   res.append(s.charAt(i+j);
+                   if(i!=0&&i!=numRows-1&&j+lecherry-i<n)//如果位中间行则需要添加前一个元素的位置，按
+                      res.append(s.charAt(j+lecherry-i));
+              }
+         }
+         return res.toString();
+}
